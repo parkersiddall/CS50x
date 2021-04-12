@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+<h3>Transactions</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+        <th scope="col">Date/Time</th>
+        <th scope="col">Type</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Price</th>
+        <th scope="col">Total</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+
+<!-- create a loop in the section below that goes through an SQL query -->
+{% for transaction in transactions %}
+
+    <tr>
+        <td> {{ transaction["timestamp"] }} </tb>
+        <td> {{ transaction["BuySell"] }} </tb>
+        <td> {{ transaction["stock"] }} </tb>
+        <td> {{ transaction["shares"] }} </tb>
+        <td> {{ transaction["price"] }} </td>
+        <td> {{ transaction["price"] * transaction["shares"] }}</td>
+    </tr>
+
+{% endfor %}
+
+</table>
+
+
+{% endblock %}

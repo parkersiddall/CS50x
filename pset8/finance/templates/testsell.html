@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    TEST Sell
+{% endblock %}
+
+{% block main %}
+
+
+    You wish to sell {{ shares }} shares of {{ symbol }} at ${{ price }} per share, correct?
+
+{{ checkshares }}
+
+{{ total_value }}
+
+{% endblock %}

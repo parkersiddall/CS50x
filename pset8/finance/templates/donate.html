@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Donate
+{% endblock %}
+
+{% block main %}
+
+<p><b>Don't be a dick. Give back.</b></p>
+
+<p>Donations will be withdrawn from your cash holdings and placed in a charity fund.</p>
+
+
+ <form action="/donate" method="POST">
+
+        <div class="form-group">
+            <input name="donation" type="text" placeholder="Amount to donate">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Donate</button>
+
+    </form>
+
+
+{% endblock %}

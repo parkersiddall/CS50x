@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<h3>Current Holdings</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+
+<!-- create a loop in the section below that goes through an SQL query -->
+{% for holding in holdings %}
+
+    <tr>
+        <td> {{ holding["stock"] }} </tb>
+        <td> {{ holding["name"] }} </td>
+        <td> {{ holding["SUM (shares)"] }} </tb>
+        <td> {{ holding["price"] }} </td>
+        <td> {{ holding["price"] * holding["SUM (shares)"] }}</td>
+    </tr>
+
+{% endfor %}
+
+    <tr>
+        <td> <b>TOTAL</b> </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td> <b>{{ total_holdings }}</b></td>
+    </tr>
+
+</table>
+
+
+{% endblock %}
